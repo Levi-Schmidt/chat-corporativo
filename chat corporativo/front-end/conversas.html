@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="block1.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"/>
 </head>
 <body>
-    <div id="popUpOptions"></div>
+    <div id="popUpOptions">
+        <button type="button" id="createGroup"></button>
+        <button type="button" id="conect"></button>
+    </div>
+    <div id="NotificationsConfig"></div>
+    <div id="accountConfig"></div>
+    <div id="themeConfig"></div>
+    <div id="help"></div>
+    <div id="shortCutCofig"></div>
     <div id="popUpNotifications"></div>
     <div id="principalBody">
         <div id="block1">
             <button id="back1" class="back"><i class="bi bi-arrow-left"></i></button>
             <section id="buttonsConfig">
-                <button id="config" class="config"><i class="bi bi-gear-fill"></i></button>
+                <button id="config" class="config" onclick="alternateConfigContacts()"><i class="bi bi-gear-fill"></i></button>
                 <button id="user" class="config"><i class="bi bi-person-fill"></i></button>
             </section>
         </div>
@@ -141,7 +149,7 @@
             <section id="conversation"></section>
             <section id="message">
                 <form action="/Send" method="POST" enctype="multipart/form-data">
-                    <button type="button" id="openFiles"><i class="bi bi-plus-circle-fill"></i></button>
+                    <button type="button" id="openFile" onclick="openFiles()"><i class="bi bi-plus-circle-fill"></i></button>
                     <div id="hiddenButtonFiles">
                         <input type="file" class="writeMessage" id="chooseFiles"></input>
                     </div>
@@ -151,5 +159,6 @@
             </section>
         </div>
     </div>
+    <script src="conversas.js"></script>
 </body>
 </html>
