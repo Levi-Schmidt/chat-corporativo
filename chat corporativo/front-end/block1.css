@@ -13,7 +13,7 @@
 }
 :root{
     --color-primary: #ffffff;
-    --color-secondary: #a1a1a1;
+    --color-secondary: #c4c4c4;
     --color-details: #000000;
     --color-alternable: #084E80;
     --background-image: url(../padrão-café.png);
@@ -49,6 +49,7 @@ body{
     background-color: var(--color-primary);
     width: 65vw;
     height: 100vh;
+    position: relative;
 }
 #buttonsConfig{
     width: 100%;
@@ -78,12 +79,11 @@ body{
 button{
     width: 30px;
     height: 30px;
-    outline: 0px;
-    border: solid 2px #000000;
-    border-top: transparent;
+    border: solid 2px var(--color-primary);
+    border-top: 2px transparent;
     border-radius: 15px;
-    padding-top: 2px;
     cursor: pointer;
+    padding-top: 2px;
 }
 .config{
     transition: 0.2s;
@@ -101,9 +101,10 @@ button:hover{
     border-radius: 20px;
     padding-left: 20px;
 }
-#option{
-    font-size: 17px; 
-    background-color: var(--color-primary);
+i{
+    transition: 0.2s;
+    font-size: 20px;
+    margin-right: 1px;
 }
 .back{
     visibility: hidden;
@@ -122,7 +123,7 @@ button:hover{
     border-left: 0px;
     border-right: 0px;
     border-top: 0px;
-    border-image: linear-gradient(to right, #ffffff 0%, #000000 30% 70%, #ffffff 100%);
+    border-image: linear-gradient(to right, var(--color-primary) 0%, var(--color-details) 30% 70%, var(--color-primary) 100%);
     border-image-slice: 1;
     display: flex;
     align-items: center;
@@ -143,9 +144,9 @@ button:hover{
 }
 #simpleConfiguration{
     width: 30vw;
-    height: 85vh;
+    height: 90vh;
     position: fixed;
-    top: 15vh;
+    top: 10vh;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -219,16 +220,13 @@ button:hover{
 }
 ::-webkit-scrollbar {
     transition: 0.2s;
-    width: 2px;
-}
-::-webkit-scrollbar:hover{
-    transition: 0.2s;
-    width: 7px;
+    width: 5px;
 }
 ::-webkit-scrollbar-track {
-    background: #ffffff;
+    background: var(--color-primary);
 }
 ::-webkit-scrollbar-thumb { 
+    background: var(--color-secondary);
     border-radius: 10px;
 } 
 ::-webkit-scrollbar-thumb:hover {
@@ -246,52 +244,73 @@ button:hover{
     background-image: var(--background-image);
 }
 #message{
-    width: 100%;
-    height: 10%;
-    display: flex;
-    align-items: center;
-}
-form{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-textarea {
-    width: 80%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    overflow: scroll;
-}
-#hiddenButtonFiles{
-    width: 30px;
-    height: 30px;
-    background-color: var(--color-primary);
-    border: 1px solid;
-    border-radius: 15px;
-    position: absolute;
-    bottom: 15px;
-    left: 490px;
+    width: 65vw;
+    height: auto;
+    min-height: 10%;
+    max-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
+    position: fixed;
+    bottom: 0;
+}
+form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+}
+#chooseFiles{
+    all: unset;
+}
+textarea {
+    width: 80%;
+    height: auto;
+    min-height: 10%;
+    max-height: 350px;
+    border-radius: 5px;
+    border: 1px solid var(--color-details);
+    overflow: scroll;
+    font-size: 10px;
+}
+#openFile{
+    margin-left: 2vw;
+}
+#hiddenButtonFiles{
+    width: 400px;
+    height: 100px;
+    background-color: var(--color-primary);
+    border: 1px solid;
+    border-radius: 15px;
+    position: fixed;
+    bottom: 12vh;
+    left: 36vw;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 input[type="file"]{
-    opacity: 1;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    opacity: 0;
+    border: 2px solid var(--color-details);
 }
-input[type="submit"] {
-    padding: 10px;
+input[type="submit"]{
+    transition: 0.2s;
+    padding: 5px;
+    border: 2px solid;
     border-radius: 5px;
-    border: none;
+    margin-right: 2vw;
+    background-color: var(--color-primary);
+    font-weight: bold;
+    color: var(--color-details);
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    transition: 0.2s;
     background-color: var(--color-details);
     color: var(--color-primary);
-    cursor: pointer;
 }
-input[type="submit"]:hover {
-    background-color: var(--color-secondary);
+#popUpOptions{
+    display: none;
 }
